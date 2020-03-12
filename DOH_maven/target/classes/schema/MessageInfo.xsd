@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by Louis Liu (ecom) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"  attributeFormDefault="unqualified">
+	<xs:element name="MessageInfo">
+		<xs:annotation>
+			<xs:documentation>DoH.base Message Information</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="ProcessID"/>
+				<xs:element type="xs:string" name="SenderID"/>
+				<xs:element type="xs:string" name="ReceiverID"/>
+				<xs:element type="xs:string" name="DocumentType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

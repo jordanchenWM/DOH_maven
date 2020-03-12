@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="InventoryDate" type="xsd:string"/>
+  <xsd:element name="HospID" type="xsd:string"/>
+  <xsd:element name="MaterialCode" type="xsd:string"/>
+  <xsd:element name="MaterialName" type="xsd:string"/>
+  <xsd:element name="BidNo" type="xsd:string"/>
+  <xsd:element name="BatchNo" type="xsd:string"/>
+  <xsd:element name="HighLevelSafeQty" type="xsd:string"/>
+  <xsd:element name="LowLevelSafeQty" type="xsd:string"/>
+  <xsd:element name="InventortQty" type="xsd:string"/>
+  <xsd:element name="AutoOrderQty" type="xsd:string"/>
+  <xsd:element name="EmergyOrderQty" type="xsd:string"/>
+  <xsd:element name="AutoOrderReceiptQty" type="xsd:string"/>
+  <xsd:element name="EmergyOrderReceiptQty" type="xsd:string"/>
+  <xsd:element name="LastMonthConsumeQty" type="xsd:string"/>
+  <xsd:element name="ThisMonthConsumeQty" type="xsd:string"/>
+  <xsd:element name="TranslateRate" type="xsd:string"/>
+  <xsd:element name="PackageQty" type="xsd:string"/>
+  <xsd:element name="IsCaculate" type="xsd:string"/>
+  <xsd:element name="DailyAvgConsumeQty" type="xsd:string"/>
+  <xsd:element name="InventoryFactor" type="xsd:string"/>
+  <xsd:element name="SafeDayMargin" type="xsd:string"/>
+  <xsd:complexType name="dailyInventory">
+    <xsd:sequence>
+      <xsd:element name="InventoryDate" nillable="true" type="xsd:string"/>
+      <xsd:element name="HospID" nillable="true" type="xsd:string"/>
+      <xsd:element name="MaterialCode" nillable="true" type="xsd:string"/>
+      <xsd:element name="MaterialName" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="BidNo" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="BatchNo" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="HighLevelSafeQty" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="LowLevelSafeQty" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="InventortQty" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="AutoOrderQty" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="EmergyOrderQty" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="AutoOrderReceiptQty" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="EmergyOrderReceiptQty" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="LastMonthConsumeQty" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="ThisMonthConsumeQty" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="TranslateRate" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PackageQty" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="IsCaculate" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="DailyAvgConsumeQty" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="InventoryFactor" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="SafeDayMargin" nillable="true" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

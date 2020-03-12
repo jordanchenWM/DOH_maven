@@ -1,0 +1,284 @@
+<style>
+
+.Zebra_DatePicker_Icon{
+	top: 14px !important;
+}
+</style>
+
+
+<div class="modal fade" id="Schedule_Add_Page" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-md m" role="document">
+	    <div class="modal-content" >
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">New Schedule</h5>	        
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <!--  modal-header -->
+	      <form id="add_schedule_form" >
+	      	<input type="hidden" name="method" id="method"/>
+	       	<div class="modal-body">
+	       	 	<h4 class="card-title">Schedule Infomation</h4>
+	       	 	     
+	      		<input type="hidden" name="UUID" id="UUID" class="border rounded form-control col-sm-5"/>
+	      		
+	      		<div class="form-group row">
+                	<label for="Task_Name" class="col-sm-4 col-form-label">Task Name<span class="text-danger">*</span></label>
+                	<div class="col-sm-8">
+                		<input type="text" class="form-control" name="Task_Name" id="Task_Name" placeholder="Task Name" required>                		
+                     </div>
+               </div>
+	      		
+	      		<div class="form-group row">
+                	<label for="Description" class="col-sm-4 col-form-label">Description</label>
+                	<div class="col-sm-8">
+                		<input type="text" class="form-control" name="Description"  id="Description" placeholder="Description">                		
+                     </div>
+               </div>
+               
+	      		
+	      		<div class="form-group row">
+                	<label class="col-sm-4 col-form-label">Service<span class="text-danger"> *</span></label>
+                	<div class="col-sm-8">        
+                		<select name="Service" id="Service" class="form-control" required>
+						    <option value=''>請選擇</option>
+						</select>	        		
+                     </div>
+               </div>
+               
+	      		<h4 class="card-title">Schedule Time Properties</h4>
+	      		
+	      		<div class="form-group row">
+                	<label for="StartTime" class="col-sm-4 col-form-label">StartTime<span class="text-danger"> *</span></label>
+                	<div class="col-sm-8">
+                		<input type="text" class="form-control" name="StartTime" id="StartTime" placeholder="StartTime" required>                		
+                     </div>
+               </div>
+		      	
+		      	<div class="form-group row">
+                	<label for="EndTime" class="col-sm-4 col-form-label">EndTime</label>
+                	<div class="col-sm-8">
+                		<input type="text" class="form-control" name="EndTime" id="EndTime" placeholder="EndTime">                		
+                     </div>
+               </div>
+		      	
+		      	<div class="form-group row">
+                	<label class="col-sm-4 col-form-label">Mode</label>
+                	<div class="col-sm-8">    
+						<select name="Mode" id="Mode" class="form-control">
+							<option value='Interval'>Interval</option>
+							<option value='Mask'>Mask</option>
+						</select>	     		
+                     </div>
+               </div>
+		      	
+		      <div class="form-group row interval_div">
+                	<label for="Interval" class="col-sm-4 col-form-label">Interval(sec)<span class="text-danger"> *</span></label>
+                	<div class="col-sm-8">
+                		<input type="number" class="form-control" name="Interval" id="Interval" placeholder="Interval">                		      		
+                     </div>                     
+               </div>
+               		      	
+		      	<div class="form-group row mask_div">
+                	<label class="col-sm-4 col-form-label">HourMask<span class="text-danger"> *</span></label>
+                	<div class="col-sm-8">    
+						<select name="HourMask" id="HourMask" class="form-control">
+						    <option value=''>請選擇</option>
+						</select>	     		
+                     </div>
+               </div>
+               
+               <div class="form-group row mask_div">
+                	<label class="col-sm-4 col-form-label">MinuteMask<span class="text-danger"> *</span></label>
+                	<div class="col-sm-8">    
+						<select name="MinuteMask" id="MinuteMask" class="form-control">
+						    <option value=''>請選擇</option>
+						</select>	     		
+                     </div>
+               </div>
+	       </div>
+           <div class="modal-footer">
+	           <button id="save_newSchedule" class="btn btn-primary">新增</button>
+	           <button class="btn btn-secondary" data-dismiss="modal">關閉</button>
+	       </div>	       
+	       </form>	
+	    </div>
+      </div>			
+</div>		
+	
+	<script type="text/javascript">
+	//var schedule_info = {};
+	
+	function showAdd_Schedule() {
+		$('#Schedule_Add_Page').modal({
+			 backdrop: 'static',
+			 keyboard: false 
+		});	
+	}
+	
+	function initPage() {	
+		
+		//reset form value
+		$("#add_schedule_form")[0].reset();
+		$('#Schedule_Add_Page #method').val('Schedule_Add');
+		
+		$('#Schedule_Add_Page #save_newSchedule').attr('disabled', false);
+		$('#Schedule_Add_Page #save_newSchedule').html("新增");
+		
+		$('.interval_div').show();
+		$('.mask_div').hide();
+		
+		/*
+		$('#Schedule_Add_Page #Task_Name, #ID, #Description, #Service, #StartTime').val("");
+		$('#Schedule_Add_Page #EndTime, #Interval, #HourMask, #MinuteMask, #Mode').val("");
+		schedule_info.method = 'Schedule_Add'
+		
+		$('#Schedule_Add_Page #save_newSchedule').attr('disabled', false);
+		$('#display_interval, #display_hourmask, #display_minutemask').hide()
+		$('#save_newSchedule').html("新增")
+		*/
+
+		initDatePicker($('#StartTime, #EndTime'));
+	}
+	/*
+	function setSchedule_info() {
+		
+		schedule_info.Task_Name = $('#Schedule_Add_Page #Task_Name').val();
+		schedule_info.ID = $('#Schedule_Add_Page #ID').val();
+		schedule_info.Description = $('#Schedule_Add_Page #Description').val();
+		schedule_info.Service = $('#Schedule_Add_Page #Service').val();
+		schedule_info.StartTime =  $('#Schedule_Add_Page #StartTime').val();
+		schedule_info.EndTime =  $('#Schedule_Add_Page #EndTime').val();		
+		schedule_info.Interval =  $('#Schedule_Add_Page #Interval').val()*1000 ;
+		schedule_info.HourMask =  $('#Schedule_Add_Page #HourMask').val() ;
+		schedule_info.MinuteMask = $('#Schedule_Add_Page #MinuteMask').val() ;
+		schedule_info.nextRun = moment($('#Schedule_Add_Page #StartTime').val()).add($('#Schedule_Add_Page #Interval').val(),'seconds').format("Y-M-DD HH:mm:ss")
+		
+	}*/
+	
+	function checkSchedule_info() {
+			
+		if ($('#Schedule_Add_Page #Mode').val() == "Interval"){
+			if($('#Schedule_Add_Page #Interval').val() == "" || $('#Schedule_Add_Page #Interval').val() == "0"){
+				alert("Interval must be a positive integer !")
+				return false;
+			}
+		} else if ($('#Schedule_Add_Page #Mode').val() == "Mask"){
+			
+			if($('#Schedule_Add_Page #HourMask').val() == ""){
+				alert("please select HourMask !")
+				return false;
+			}
+			
+			if($('#Schedule_Add_Page #MinuteMask').val() == ""){
+				alert("please select MinuteMask !")
+				return false;
+			}
+		}else if($('#Schedule_Add_Page #Mode').val() == ""){
+			alert("please select Mode !")
+			return false;
+		}
+		
+		if($('#Schedule_Add_Page #EndTime').val() != ""){
+			if($('#Schedule_Add_Page #StartTime').val() > $('#Schedule_Add_Page #EndTime').val()){
+				alert("illegal Time!")
+				return false;
+			}
+		}
+		
+		return true;
+	}
+	
+	function setEditSchedule_info(data) {
+		initPage();
+		 
+		//var hour = parseInt(data["HOURMASK"]);
+		//var minute = parseInt(data["MINUTEMASK"]);
+		
+		$('#Schedule_Add_Page #UUID').val(data["UUID"]);
+		$('#Schedule_Add_Page #Task_Name').val(data["TASK_NAME"]);
+		$('#Schedule_Add_Page #Description').val(data['DESCRIPTION'])
+		$('#Schedule_Add_Page #Service').val(data["SERVICE"]) 
+		$('#Schedule_Add_Page #StartTime').val(data["STARTTIME"]);
+		$('#Schedule_Add_Page #EndTime').val(data["ENDTIME"]);	
+		
+		
+		//mode = mask
+		if (data["TIMEINTERVAL"] == "0"){
+			$('#Schedule_Add_Page #HourMask').val(data["HOURMASK"]); 
+			$('#Schedule_Add_Page #MinuteMask').val(data["MINUTEMASK"]);
+			$('#Schedule_Add_Page #Mode').val("Mask").trigger('change')			
+		} else { //mode = interval
+			$('#Schedule_Add_Page #Interval').val(data["TIMEINTERVAL"]) 			
+		}
+		
+		//schedule is running, disable edit save button
+		if (data["STATE"] == "1"){
+			$('#Schedule_Add_Page #save_newSchedule').attr('disabled', true);
+		}
+		
+		$('#StartTime').trigger('select')
+		$('#method').val('Schedule_edit')
+		//schedule_info.method = 'Schedule_edit';
+		$('#save_newSchedule').html("儲存")
+	}
+	
+	$(document).ready(function() {
+				
+		
+		$('#Schedule_Add_Page #Mode').change(function() {
+			$('.interval_div, .mask_div').toggle();
+		});
+		
+		$('#add_schedule_form').validator().on('submit', function (e) {
+			  if (e.isDefaultPrevented()) {
+			    // handle the invalid form...
+			  } else {
+				  e.preventDefault();
+				  if (checkSchedule_info()){
+						$.ajax({		
+							url: "SchedulerManagementServlet",
+							type: "POST",
+							data: $(this).serialize(),
+							success:function(data) {
+								$('#Schedule_Add_Page').modal('hide');
+								var condition = {};
+								condition.method = 'ScheduleTable';
+								refresh_Table(scheduleTable, condition);
+							},error: function (xhr) {
+								$('#Schedule_Add_Page').modal('hide');
+				          		stopLoader();
+				          		errorLog(xhr.responseText);
+					  		}
+						});
+					}
+			  }
+		})
+		/*
+		$('#Schedule_Add_Page #save_newSchedule').click(function() {
+			if (checkSchedule_info()){
+				setSchedule_info();
+				$.ajax({		
+					url: "SchedulerManagementServlet",
+					type: "POST",
+					data: schedule_info,
+					success:function(data) {
+						$('#Schedule_Add_Page').modal('hide');
+						Condition.method = 'ScheduleTable';
+						refresh_Table(scheduleTable);
+					},error: function (xhr) {
+						$('#Schedule_Add_Page').modal('hide');
+		          		stopLoader();
+		          		errorLog(xhr.responseText);
+			  		}
+				});
+			}
+		}) ;
+		*/
+		 
+		initFileList($('#Service'));
+		initOneToTwentyfour($('#HourMask'))
+		initOneToSixty($('#MinuteMask'));
+	});
+	</script>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="PurchaseOrder">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="MesgInfo" nillable="true" type="messageInformation"/>
+        <xsd:element name="Header" nillable="true">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="DocInfo" nillable="true" type="rec_documentInformation"/>
+              <xsd:element name="HospInfo" nillable="true" type="hospitalInformation"/>
+              <xsd:element name="VendorInfo" nillable="true" type="vendorInformation"/>
+              <xsd:element name="StatusInfo" nillable="true" type="statusInformation"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="Items" nillable="true" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="ItemInfo" nillable="true" type="rec_itemInformation"/>
+              <xsd:element name="MedInfo" nillable="true" type="medicineInformation"/>
+              <xsd:element name="OrderInfo" nillable="true" type="rec_orderInformation"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="MEDPORequest">
+    <xsd:sequence>
+      <xsd:element name="PurchaseOrder" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="MesgInfo" nillable="true" type="messageInformation"/>
+            <xsd:element name="Header" nillable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="DocInfo" nillable="true" type="rec_documentInformation"/>
+                  <xsd:element name="HospInfo" nillable="true" type="hospitalInformation"/>
+                  <xsd:element name="VendorInfo" nillable="true" type="vendorInformation"/>
+                  <xsd:element name="StatusInfo" nillable="true" type="statusInformation"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Items" nillable="true" maxOccurs="unbounded">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="ItemInfo" nillable="true" type="rec_itemInformation"/>
+                  <xsd:element name="MedInfo" nillable="true" type="medicineInformation"/>
+                  <xsd:element name="OrderInfo" nillable="true" type="rec_orderInformation"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="messageInformation">
+    <xsd:sequence>
+      <xsd:element name="ProcessID" nillable="true" type="xsd:string"/>
+      <xsd:element name="SenderID" nillable="true" type="xsd:string"/>
+      <xsd:element name="ReceiverID" nillable="true" type="xsd:string"/>
+      <xsd:element name="DocumentType" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="rec_documentInformation">
+    <xsd:sequence>
+      <xsd:element name="AllianceID" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="DocNo" nillable="true" type="xsd:string"/>
+      <xsd:element name="Date" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="POType" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="TotalAmount" nillable="true" type="xsd:float" minOccurs="0"/>
+      <xsd:element name="Memo" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="Delete_User" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="Delete_Datetime" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="Delete_Reason" nillable="true" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="hospitalInformation">
+    <xsd:sequence>
+      <xsd:element name="HospID" nillable="true" type="xsd:unsignedInt"/>
+      <xsd:element name="PurchasingDept" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="Purchaser" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="ReceiptDept" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="ReceiptStaff" nillable="true" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="vendorInformation">
+    <xsd:sequence>
+      <xsd:element name="VendorNo" nillable="true" type="xsd:unsignedInt"/>
+      <xsd:element name="UePPVendor" nillable="true" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="statusInformation">
+    <xsd:sequence>
+      <xsd:element name="Status" nillable="true" type="xsd:string"/>
+      <xsd:element name="UpdateDateTime" nillable="true" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="rec_itemInformation">
+    <xsd:sequence>
+      <xsd:element name="ItemNo" nillable="true" type="xsd:string"/>
+      <xsd:element name="RequestDateTime" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="InvoiceDate" nillable="true" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="medicineInformation">
+    <xsd:sequence>
+      <xsd:element name="MedCode" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="BatchNo" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="CompNo" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="Brand" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="Name" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="Spec" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="Type" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="BidNo" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="DiscRate" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="DiscAmt" nillable="true" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="rec_orderInformation">
+    <xsd:sequence>
+      <xsd:element name="OrderUnit" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="Quantity" nillable="true" type="xsd:float" minOccurs="0"/>
+      <xsd:element name="UnitPrice" nillable="true" type="xsd:float" minOccurs="0"/>
+      <xsd:element name="POLineAmount" nillable="true" type="xsd:float" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

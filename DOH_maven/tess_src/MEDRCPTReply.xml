@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReceiptReply xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MEDRCPTReply.xsd">
+  <MesgInfo>
+    <ProcessID>ProcessID</ProcessID>
+    <SenderID>SenderID</SenderID>
+    <ReceiverID>ReceiverID</ReceiverID>
+    <DocumentType>DocumentType</DocumentType>
+  </MesgInfo>
+  <Header>
+    <DocInfo>
+      <DocNo>DocNo</DocNo>
+    </DocInfo>
+    <ReplyInfo>
+      <Status>Status</Status>
+    </ReplyInfo>
+  </Header>
+  <CrossRateInfo>
+    <SourceReceiptNo>SourceReceiptNo</SourceReceiptNo>
+    <OldRate>OldRate</OldRate>
+    <NewRate>NewRate</NewRate>
+    <Accamt>Accamt</Accamt>
+    <SourceDisamt>SourceDisamt</SourceDisamt>
+    <Memo>Memo</Memo>
+  </CrossRateInfo>
+  <UnitPriceInfo>
+    <UNRECEIPTNO>UNRECEIPTNO</UNRECEIPTNO>
+    <RECEIPTNO>RECEIPTNO</RECEIPTNO>
+    <HOSPID>HOSPID</HOSPID>
+    <HOSPRGNO>HOSPRGNO</HOSPRGNO>
+    <PROCESSID>PROCESSID</PROCESSID>
+    <CONFIRMBY>CONFIRMBY</CONFIRMBY>
+    <CONFIRMTIME>CONFIRMTIME</CONFIRMTIME>
+    <MEMO>MEMO</MEMO>
+    <FLAG>FLAG</FLAG>
+  </UnitPriceInfo>
+  <CCD_RCPT_RECOVERED>
+    <REFNO>REFNO</REFNO>
+    <VERSION>VERSION</VERSION>
+    <HOSPRGNO>HOSPRGNO</HOSPRGNO>
+    <ALLIANCEID>ALLIANCEID</ALLIANCEID>
+    <RECEIPTNO>RECEIPTNO</RECEIPTNO>
+    <NEW_PRICE>NEW_PRICE</NEW_PRICE>
+    <RECOVERED_AMOUNT>RECOVERED_AMOUNT</RECOVERED_AMOUNT>
+    <STATUS>STATUS</STATUS>
+    <FLAG>FLAG</FLAG>
+  </CCD_RCPT_RECOVERED>
+</ReceiptReply>

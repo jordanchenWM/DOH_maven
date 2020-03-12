@@ -1,0 +1,97 @@
+2020-03-04 09:49:12.321 [INFO ] DBUtil.init(28) [main] - Initializing system datasource...
+2020-03-04 09:49:12.356 [DEBUG] DBUtil.init(31) [main] - Database config file path: /Users/guofeng/workspace413/DOH_maven/target/classes/hikari.properties
+2020-03-04 09:49:14.282 [INFO ] DBUtil.init(36) [main] - System datasource is initialized.
+2020-03-04 09:49:14.417 [DEBUG] PartnerDeliveryDao.getDeliveryByMethod(53) [main] - HikariProxyPreparedStatement@87035052 wrapping com.mysql.cj.jdbc.ServerPreparedStatement[1]: select Methods, Host, Port, Location, UserName, Password, Preferred from PartnerDelivery where PartnerID = 1af1d91c-7e00-4280-97d9-dc7619f69333 and (Methods = 'HTTP-Primary' or Methods = 'HTTP-Secondary') 
+2020-03-04 09:49:14.554 [ERROR] PartnerDeliveryDao.getDeliveryByMethod(65) [main] - javax.crypto.IllegalBlockSizeException: Input length must be multiple of 16 when decrypting with padded cipher
+	at java.base/com.sun.crypto.provider.CipherCore.prepareInputBuffer(CipherCore.java:1005)
+	at java.base/com.sun.crypto.provider.CipherCore.doFinal(CipherCore.java:848)
+	at java.base/com.sun.crypto.provider.AESCipher.engineDoFinal(AESCipher.java:446)
+	at java.base/javax.crypto.Cipher.doFinal(Cipher.java:2202)
+	at internal.server.util.AES.Decrypt(AES.java:44)
+	at internal.db.dao.PartnerDeliveryDao.getDeliveryByMethod(PartnerDeliveryDao.java:60)
+	at internal.xml.util.XmlTestUtil.send(XmlTestUtil.java:146)
+	at internal.xml.util.XmlTestUtil.main(XmlTestUtil.java:15)
+
+2020-03-04 10:06:58.162 [INFO ] DBUtil.init(28) [main] - Initializing system datasource...
+2020-03-04 10:06:58.173 [DEBUG] DBUtil.init(31) [main] - Database config file path: /Users/guofeng/workspace413/DOH_maven/target/classes/hikari.properties
+2020-03-04 10:06:58.561 [INFO ] DBUtil.init(36) [main] - System datasource is initialized.
+2020-03-04 10:06:58.612 [DEBUG] PartnerDeliveryDao.getDeliveryByMethod(53) [main] - HikariProxyPreparedStatement@175961135 wrapping com.mysql.cj.jdbc.ServerPreparedStatement[1]: select Methods, Host, Port, Location, UserName, Password, Preferred from PartnerDelivery where PartnerID = 1af1d91c-7e00-4280-97d9-dc7619f69333 and (Methods = 'HTTP-Primary' or Methods = 'HTTP-Secondary') 
+2020-03-04 10:06:58.670 [ERROR] PartnerDeliveryDao.getDeliveryByMethod(65) [main] - javax.crypto.IllegalBlockSizeException: Input length must be multiple of 16 when decrypting with padded cipher
+	at java.base/com.sun.crypto.provider.CipherCore.prepareInputBuffer(CipherCore.java:1005)
+	at java.base/com.sun.crypto.provider.CipherCore.doFinal(CipherCore.java:848)
+	at java.base/com.sun.crypto.provider.AESCipher.engineDoFinal(AESCipher.java:446)
+	at java.base/javax.crypto.Cipher.doFinal(Cipher.java:2202)
+	at internal.server.util.AES.Decrypt(AES.java:44)
+	at internal.db.dao.PartnerDeliveryDao.getDeliveryByMethod(PartnerDeliveryDao.java:60)
+	at internal.xml.util.XmlTestUtil.send(XmlTestUtil.java:146)
+	at unit.XmlTest.main(XmlTest.java:146)
+
+2020-03-04 10:06:58.745 [INFO ] TnUtil.persist(29) [main] - <--- doc persist
+2020-03-04 10:06:58.769 [DEBUG] BizDocDao.insert(40) [main] - HikariProxyPreparedStatement@406511188 wrapping com.mysql.cj.jdbc.ServerPreparedStatement[2]: insert into BizDoc (DocID, DocTypeID, SenderID, ReceiverID, DocTimestamp, RoutingStatus) values (1de3a5d8-dccf-4d96-a9e0-096b59941084,00001,00001,00001,now(),New)
+2020-03-04 10:06:58.806 [DEBUG] BizDocContentDao.insert(78) [main] - HikariProxyPreparedStatement@1280378749 wrapping com.mysql.cj.jdbc.ServerPreparedStatement[3]: insert into BizDocContent (DocID, PartName, Content, MimeType, ContentLength) values (1de3a5d8-dccf-4d96-a9e0-096b59941084,xmldata,<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DoHPORequest xsi:noNamespaceSchemaLocation="..\XML Schema\MATPORequest.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <MesgInfo>
+        <ProcessID>WeiShengShu2-20030220182615830</ProcessID>
+        <SenderID>99</SenderID>
+        <ReceiverID>01</ReceiverID>
+        <DocumentType>RF</DocumentType>
+    </MesgInfo>
+    <PORequestHead>
+        <PORequestSummary>
+            <PONo>2920716007-02</PONo>
+            <POSort>2</POSort>
+            <PODate>2003-07-16 00:00:00</PODate>
+            <TotalAmount>1698.00</TotalAmount>
+            <TotalQtyDiscountAmount>0.00</TotalQtyDiscountAmount>
+            <TotalAfterQtyDiscountAmount>1698.00</TotalAfterQtyDiscountAmount>
+            <Status>E</Status>
+            <UpdateTime>2003-08-07 18:11:43</UpdateTime>
+            <Delete_User></Delete_User>
+            <Delete_Reason></Delete_Reason>
+        </PORequestSummary>
+        <HospitalInfo>
+            <HospitalID>02</HospitalID>
+            <PurchaseDept>總 倉</PurchaseDept>
+            <PurchaseStaff>王靜婷</PurchaseStaff>
+            <ReqInvoiceDate>2003-07-01 00:00:00</ReqInvoiceDate>
+            <Memo></Memo>
+        </HospitalInfo>
+        <VendorInfo>
+            <VendorID>59220402</VendorID>
+        </VendorInfo>
+    </PORequestHead>
+    <PORequestItem>
+        <PORequestDetail>
+            <POItemNo>02</POItemNo>
+            <RequireDate>2003-07-16 00:00:00</RequireDate>
+            <Qty>60.000</Qty>
+            <UnitPrice>28.3000</UnitPrice>
+            <Amount>1698.00</Amount>
+            <QtyDiscountRate>0.0000</QtyDiscountRate>
+            <QtyDiscountAmount>0.00</QtyDiscountAmount>
+            <AfterQtyDiscountAmount>1698.00</AfterQtyDiscountAmount>
+        </PORequestDetail>
+        <MaterialInfo>
+            <BatchLabel>1</BatchLabel>
+            <BatchNo>C1331-02</BatchNo>
+            <MaterialType>2</MaterialType>
+            <MaterialCode></MaterialCode>
+            <MaterialBrand></MaterialBrand>
+            <MaterialName></MaterialName>
+            <MaterialSpec></MaterialSpec>
+            <MaterialUnit>個</MaterialUnit>
+        </MaterialInfo>
+    </PORequestItem>
+</DoHPORequest>
+,text/xml,2211)
+2020-03-04 10:06:58.827 [INFO ] TnUtil.persist(36) [main] - >--- doc persist with docID: 1de3a5d8-dccf-4d96-a9e0-096b59941084
+2020-03-04 10:06:58.833 [INFO ] ReceiveFlow.extract(202) [Thread-0] - <--- extract doc content
+2020-03-04 10:06:58.838 [DEBUG] BizDocTypeDao.selectOne(36) [Thread-0] - HikariProxyPreparedStatement@13022931 wrapping com.mysql.cj.jdbc.ServerPreparedStatement[5]: select * from BizDocTypeDef where RootTag = DoHPORequest and Status = 1
+2020-03-04 10:06:58.842 [DEBUG] BizDocTypeDao.selectOne(44) [Thread-0] - {}
+2020-03-04 10:06:58.842 [WARN ] ReceiveFlow.extract(213) [Thread-0] - No doc type found for transaction: 1de3a5d8-dccf-4d96-a9e0-096b59941084
+2020-03-04 10:06:58.842 [INFO ] ReceiveFlow.extract(259) [Thread-0] - >--- end of extract
+2020-03-04 10:06:58.843 [INFO ] ReceiveFlow.updateBizDoc(141) [Thread-0] - <--- update bizdoc
+2020-03-04 10:06:58.843 [INFO ] ReceiveFlow.updateBizDoc(149) [Thread-0] - >--- end of update bizdoc
+2020-03-04 10:06:58.843 [DEBUG] ReceiveFlow.recognize(135) [Thread-0] - rootTag: DoHPORequest
+2020-03-04 10:06:59.139 [DEBUG] BizDocDao.update(55) [main] - {RoutingStatus=Done, UserStatus=Complete}
+2020-03-04 10:06:59.139 [DEBUG] BizDocDao.update(71) [main] - update BizDoc set LastModified = now() , RoutingStatus= 'Done' , UserStatus= 'Complete' where DocID = '1de3a5d8-dccf-4d96-a9e0-096b59941084'

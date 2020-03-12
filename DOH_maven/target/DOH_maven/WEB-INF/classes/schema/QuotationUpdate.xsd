@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="DoHQuotationUpdate">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="MesgInfo" nillable="true" type="messageInformation"/>
+        <xsd:element name="BidInfo" nillable="true" type="BidInfo"/>
+        <xsd:element name="QuotationInfo" nillable="true" minOccurs="0" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="QuotationSummary" nillable="true" minOccurs="0">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="QuotationNo" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="UnitPrice" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="InsurancePrice" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="QtyDiscountRate" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="QtyDiscStartDate" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="VendorID" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="MaintainStaff" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="MaintainDept" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="MaintainNote" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="ActiveDate" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="UpdateTime" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="Description" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="Status" nillable="true" type="xsd:string" minOccurs="0"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="MaterialInfo" nillable="true" type="MaterialInfo" minOccurs="0"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="AmtLimit" nillable="true" type="AmtLimit"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="QuotationUpdate">
+    <xsd:sequence>
+      <xsd:element name="DoHQuotationUpdate" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="MesgInfo" nillable="true" type="messageInformation"/>
+            <xsd:element name="BidInfo" nillable="true" type="BidInfo"/>
+            <xsd:element name="QuotationInfo" nillable="true" minOccurs="0" maxOccurs="unbounded">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="QuotationSummary" nillable="true" minOccurs="0">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="QuotationNo" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="UnitPrice" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="InsurancePrice" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="QtyDiscountRate" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="QtyDiscStartDate" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="VendorID" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="MaintainStaff" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="MaintainDept" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="MaintainNote" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="ActiveDate" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="UpdateTime" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="Description" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="Status" nillable="true" type="xsd:string" minOccurs="0"/>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="MaterialInfo" nillable="true" type="MaterialInfo" minOccurs="0"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="AmtLimit" nillable="true" type="AmtLimit"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="messageInformation">
+    <xsd:sequence>
+      <xsd:element name="ProcessID" nillable="true" type="xsd:string"/>
+      <xsd:element name="SenderID" nillable="true" type="xsd:string"/>
+      <xsd:element name="ReceiverID" nillable="true" type="xsd:string"/>
+      <xsd:element name="DocumentType" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="BidInfo">
+    <xsd:sequence>
+      <xsd:element name="BID_NO" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PRIZE_NO" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PROCESS_COUNT" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MATERIAL_TYPE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="START_DATE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="END_DATE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="TURN_DATE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="DISC_RATE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="RUNNER" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="RUN_TIME" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="ROLLBACK_TYPE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="TRANSID" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="COM_NO" nillable="true" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MaterialInfo">
+    <xsd:sequence>
+      <xsd:element name="BatchLabel" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="BatchNo" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaterialType" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaterialCode" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaterialBrand" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaterialName" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaterialSpec" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaterialUnit" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaterialPackage" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="ComputerCode" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="InsuranceID" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PERMIT_ID" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PERMIT_KIND" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PERMIT_NUMBER" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PERMIT_DEADLINE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="NATIONALID" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="NATIONALITY" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="FORMULATION_TYPE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="FORMULATION_NAME" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="CLASSID" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="CLASSNAME" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="TRANS_RATE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="ESTIMATE_AMOUNT" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="INGREDIENT" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="TRANS_TYPE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PRIZE_NO" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="BID_START_DATE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="BID_END_DATE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="SHAPE" nillable="true" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AmtLimit">
+    <xsd:sequence>
+      <xsd:element name="BID_NO" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PRIZE_NO" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="HOSPRGNO" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="EPOLIMITAMOUNT" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MODIFIED_DATE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MODIFIED_USER" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MODIFIED_MEMO" nillable="true" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

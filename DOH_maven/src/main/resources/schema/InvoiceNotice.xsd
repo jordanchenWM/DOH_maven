@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="DoHInvoiceNotice">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="MesgInfo" nillable="true" type="messageInformation"/>
+        <xsd:element name="InvoiceNoticeHead" nillable="true">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="InvoiceNo" nillable="true" type="xsd:string"/>
+              <xsd:element name="InvoiceDate" nillable="true" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="PaymentDate" nillable="true" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="UpdateTime" nillable="true" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="GroupNo" nillable="true" type="xsd:string" minOccurs="0"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="InvoiceNoticeItem" nillable="true" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="ReceiptNo" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="InvoiceNotice">
+    <xsd:sequence>
+      <xsd:element name="DoHInvoiceNotice" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="MesgInfo" nillable="true" type="messageInformation"/>
+            <xsd:element name="InvoiceNoticeHead" nillable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="InvoiceNo" nillable="true" type="xsd:string"/>
+                  <xsd:element name="InvoiceDate" nillable="true" type="xsd:string" minOccurs="0"/>
+                  <xsd:element name="PaymentDate" nillable="true" type="xsd:string" minOccurs="0"/>
+                  <xsd:element name="UpdateTime" nillable="true" type="xsd:string" minOccurs="0"/>
+                  <xsd:element name="GroupNo" nillable="true" type="xsd:string" minOccurs="0"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="InvoiceNoticeItem" nillable="true" maxOccurs="unbounded">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="ReceiptNo" nillable="true" type="xsd:string"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="messageInformation">
+    <xsd:sequence>
+      <xsd:element name="ProcessID" nillable="true" type="xsd:string"/>
+      <xsd:element name="SenderID" nillable="true" type="xsd:string"/>
+      <xsd:element name="ReceiverID" nillable="true" type="xsd:string"/>
+      <xsd:element name="DocumentType" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

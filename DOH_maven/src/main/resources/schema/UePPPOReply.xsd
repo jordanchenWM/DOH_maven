@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="HISPurchaseOrderUpdateRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="MesgInfo" nillable="true" type="messageInformation"/>
+        <xsd:element name="HIS_PO" nillable="true" type="hp_todd" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="MED_PO">
+    <xsd:sequence>
+      <xsd:element name="HISPurchaseOrderUpdateRequest" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="MesgInfo" nillable="true" type="messageInformation"/>
+            <xsd:element name="HIS_PO" nillable="true" type="hp_todd" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:any processContents="lax"/>
+    </xsd:sequence>
+    <xsd:anyAttribute processContents="lax"/>
+  </xsd:complexType>
+  <xsd:complexType name="messageInformation">
+    <xsd:sequence>
+      <xsd:element name="ProcessID" nillable="true" type="xsd:string"/>
+      <xsd:element name="SenderID" nillable="true" type="xsd:string"/>
+      <xsd:element name="ReceiverID" nillable="true" type="xsd:string"/>
+      <xsd:element name="DocumentType" nillable="true" type="xsd:string"/>
+      <xsd:any processContents="lax"/>
+    </xsd:sequence>
+    <xsd:anyAttribute processContents="lax"/>
+  </xsd:complexType>
+  <xsd:complexType name="hp_todd">
+    <xsd:sequence>
+      <xsd:element name="odd_no" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_item" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_ally_id" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_hospid" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_acp_id" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_id_way" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_lab" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_sort" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_pur_dt" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_gp_nm" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_ctr_id" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_ctr" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_bat_item" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_req_dt" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_status" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_o_status" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_b2b_yn" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_vdr_no" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_d_brand" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_mtr" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_desc" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_spec" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_qty" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_um" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_price" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_amt" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_inv_dt" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_emg_yn" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_lab_yn" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_chef_nm" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_s_dt" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_s_time" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_remark" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_alt_dt" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_alt_time" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_dis_rte" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_dis_amt" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_pay_amt" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_disamt" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_com_no" nillable="true" type="xsd:string"/>
+      <xsd:element name="odd_bat_remark" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

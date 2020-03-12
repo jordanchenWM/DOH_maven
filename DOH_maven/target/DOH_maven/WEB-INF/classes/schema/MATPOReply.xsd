@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="DoHPOReply">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="MesgInfo" nillable="true" type="messageInformation"/>
+        <xsd:element name="POReplyHead" nillable="true">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="POReplySummary" nillable="true">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="PONo" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="Status" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="UpdateTime" nillable="true" type="xsd:string" minOccurs="0"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="HospitalInfo" nillable="true">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="HospitalID" nillable="true" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="VendorInfo" nillable="true">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="VendorID" nillable="true" type="xsd:string"/>
+                    <xsd:element name="Memo" nillable="true" type="xsd:string" minOccurs="0"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="POReplyItem" nillable="true" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="POReplyDetail" nillable="true">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="POItemNo" nillable="true" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="ShipInfo" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="ShipSequence" nillable="true" type="xsd:string"/>
+                    <xsd:element name="ShipDate" nillable="true" type="xsd:string"/>
+                    <xsd:element name="ShipQty" nillable="true" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="POReplyPrice" nillable="true">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="PONO" nillable="true" type="xsd:string"/>
+              <xsd:element name="PROCESSID" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="MATPOReply">
+    <xsd:sequence>
+      <xsd:element name="DoHPOReply" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="MesgInfo" nillable="true" type="messageInformation"/>
+            <xsd:element name="POReplyHead" nillable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="POReplySummary" nillable="true">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="PONo" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="Status" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="UpdateTime" nillable="true" type="xsd:string" minOccurs="0"/>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HospitalInfo" nillable="true">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="HospitalID" nillable="true" type="xsd:string"/>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="VendorInfo" nillable="true">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="VendorID" nillable="true" type="xsd:string"/>
+                        <xsd:element name="Memo" nillable="true" type="xsd:string" minOccurs="0"/>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="POReplyItem" nillable="true" maxOccurs="unbounded">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="POReplyDetail" nillable="true">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="POItemNo" nillable="true" type="xsd:string"/>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="ShipInfo" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="ShipSequence" nillable="true" type="xsd:string"/>
+                        <xsd:element name="ShipDate" nillable="true" type="xsd:string"/>
+                        <xsd:element name="ShipQty" nillable="true" type="xsd:string"/>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="POReplyPrice" nillable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="PONO" nillable="true" type="xsd:string"/>
+                  <xsd:element name="PROCESSID" nillable="true" type="xsd:string"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="messageInformation">
+    <xsd:sequence>
+      <xsd:element name="ProcessID" nillable="true" type="xsd:string"/>
+      <xsd:element name="SenderID" nillable="true" type="xsd:string"/>
+      <xsd:element name="ReceiverID" nillable="true" type="xsd:string"/>
+      <xsd:element name="DocumentType" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

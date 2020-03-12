@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="InventoryNotice">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="MesgInfo" nillable="true" type="messageInformation"/>
+        <xsd:element name="Header" nillable="true">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="StatusInfo" nillable="true" type="statusInformation" minOccurs="0"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="InventoryInfo" nillable="true" type="dailyInventory" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="InventoryNotice">
+    <xsd:sequence>
+      <xsd:element name="InventoryNotice" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="MesgInfo" nillable="true" type="messageInformation"/>
+            <xsd:element name="Header" nillable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="StatusInfo" nillable="true" type="statusInformation" minOccurs="0"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="InventoryInfo" nillable="true" type="dailyInventory" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="messageInformation">
+    <xsd:sequence>
+      <xsd:element name="ProcessID" nillable="true" type="xsd:string"/>
+      <xsd:element name="SenderID" nillable="true" type="xsd:string"/>
+      <xsd:element name="ReceiverID" nillable="true" type="xsd:string"/>
+      <xsd:element name="DocumentType" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="statusInformation">
+    <xsd:sequence>
+      <xsd:element name="Status" nillable="true" type="xsd:string"/>
+      <xsd:element name="UpdateDateTime" nillable="true" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="dailyInventory">
+    <xsd:sequence>
+      <xsd:element name="InventoryDate" nillable="true" type="xsd:string"/>
+      <xsd:element name="HospID" nillable="true" type="xsd:string"/>
+      <xsd:element name="MaterialCode" nillable="true" type="xsd:string"/>
+      <xsd:element name="MaterialName" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="BidNo" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="BatchNo" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="HighLevelSafeQty" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="LowLevelSafeQty" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="InventortQty" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="AutoOrderQty" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="EmergyOrderQty" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="AutoOrderReceiptQty" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="EmergyOrderReceiptQty" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="LastMonthConsumeQty" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="ThisMonthConsumeQty" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="TranslateRate" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PackageQty" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="IsCaculate" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="DailyAvgConsumeQty" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="InventoryFactor" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="SafeDayMargin" nillable="true" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

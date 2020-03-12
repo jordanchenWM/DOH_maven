@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PurchaseOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MEDPORequest.xsd">
+  <MesgInfo>
+    <ProcessID>ProcessID</ProcessID>
+    <SenderID>SenderID</SenderID>
+    <ReceiverID>ReceiverID</ReceiverID>
+    <DocumentType>DocumentType</DocumentType>
+  </MesgInfo>
+  <Header>
+    <DocInfo>
+      <DocNo>DocNo</DocNo>
+    </DocInfo>
+    <HospInfo>
+      <HospID>0</HospID>
+    </HospInfo>
+    <VendorInfo>
+      <VendorNo>0</VendorNo>
+    </VendorInfo>
+    <StatusInfo>
+      <Status>Status</Status>
+    </StatusInfo>
+  </Header>
+  <Items>
+    <ItemInfo>
+      <ItemNo>ItemNo</ItemNo>
+    </ItemInfo>
+    <MedInfo/>
+    <OrderInfo/>
+  </Items>
+</PurchaseOrder>

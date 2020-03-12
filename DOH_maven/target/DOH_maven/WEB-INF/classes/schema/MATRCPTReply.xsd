@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="DoHReceiptReply">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="MesgInfo" nillable="true" type="messageInformation"/>
+        <xsd:element name="ReceiptReplyHead" nillable="true">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="ReceiptReplySummary" nillable="true">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="ReceiptNo" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="Status" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="UpdateTime" nillable="true" type="xsd:string" minOccurs="0"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="HospitalInfo" nillable="true">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="HospitalID" nillable="true" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="VendorInfo" nillable="true">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="VendorID" nillable="true" type="xsd:string"/>
+                    <xsd:element name="ReplyTime" nillable="true" type="xsd:string"/>
+                    <xsd:element name="Memo" nillable="true" type="xsd:string" minOccurs="0"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="UnitPriceInfo" nillable="true">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="UNRECEIPTNO" nillable="true" type="xsd:string"/>
+              <xsd:element name="RECEIPTNO" nillable="true" type="xsd:string"/>
+              <xsd:element name="HOSPID" nillable="true" type="xsd:string"/>
+              <xsd:element name="HOSPRGNO" nillable="true" type="xsd:string"/>
+              <xsd:element name="PROCESSID" nillable="true" type="xsd:string"/>
+              <xsd:element name="CONFIRMBY" nillable="true" type="xsd:string"/>
+              <xsd:element name="CONFIRMTIME" nillable="true" type="xsd:string"/>
+              <xsd:element name="MEMO" nillable="true" type="xsd:string"/>
+              <xsd:element name="FLAG" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="MCCDRecoveredInfo" nillable="true" type="rec_CCDReocvered"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="MATRCPTReply">
+    <xsd:sequence>
+      <xsd:element name="DoHReceiptReply" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="MesgInfo" nillable="true" type="messageInformation"/>
+            <xsd:element name="ReceiptReplyHead" nillable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="ReceiptReplySummary" nillable="true">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="ReceiptNo" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="Status" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="UpdateTime" nillable="true" type="xsd:string" minOccurs="0"/>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HospitalInfo" nillable="true">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="HospitalID" nillable="true" type="xsd:string"/>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="VendorInfo" nillable="true">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="VendorID" nillable="true" type="xsd:string"/>
+                        <xsd:element name="ReplyTime" nillable="true" type="xsd:string"/>
+                        <xsd:element name="Memo" nillable="true" type="xsd:string" minOccurs="0"/>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="UnitPriceInfo" nillable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="UNRECEIPTNO" nillable="true" type="xsd:string"/>
+                  <xsd:element name="RECEIPTNO" nillable="true" type="xsd:string"/>
+                  <xsd:element name="HOSPID" nillable="true" type="xsd:string"/>
+                  <xsd:element name="HOSPRGNO" nillable="true" type="xsd:string"/>
+                  <xsd:element name="PROCESSID" nillable="true" type="xsd:string"/>
+                  <xsd:element name="CONFIRMBY" nillable="true" type="xsd:string"/>
+                  <xsd:element name="CONFIRMTIME" nillable="true" type="xsd:string"/>
+                  <xsd:element name="MEMO" nillable="true" type="xsd:string"/>
+                  <xsd:element name="FLAG" nillable="true" type="xsd:string"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="MCCDRecoveredInfo" nillable="true" type="rec_CCDReocvered"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="messageInformation">
+    <xsd:sequence>
+      <xsd:element name="ProcessID" nillable="true" type="xsd:string"/>
+      <xsd:element name="SenderID" nillable="true" type="xsd:string"/>
+      <xsd:element name="ReceiverID" nillable="true" type="xsd:string"/>
+      <xsd:element name="DocumentType" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="rec_CCDReocvered">
+    <xsd:sequence>
+      <xsd:element name="REFNO" nillable="true" type="xsd:string"/>
+      <xsd:element name="VERSION" nillable="true" type="xsd:string"/>
+      <xsd:element name="HOSPRGNO" nillable="true" type="xsd:string"/>
+      <xsd:element name="ALLIANCEID" nillable="true" type="xsd:string"/>
+      <xsd:element name="RECEIPTNO" nillable="true" type="xsd:string"/>
+      <xsd:element name="NEW_PRICE" nillable="true" type="xsd:string"/>
+      <xsd:element name="RECOVERED_AMOUNT" nillable="true" type="xsd:string"/>
+      <xsd:element name="STATUS" nillable="true" type="xsd:string"/>
+      <xsd:element name="FLAG" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

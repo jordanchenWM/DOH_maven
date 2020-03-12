@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="DoHPORequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="MesgInfo" nillable="true" type="messageInformation"/>
+        <xsd:element name="PORequestHead" nillable="true">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="PORequestSummary" nillable="true">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="PONo" nillable="true" type="xsd:string"/>
+                    <xsd:element name="POSort" nillable="true" type="xsd:string"/>
+                    <xsd:element name="PODate" nillable="true" type="xsd:string"/>
+                    <xsd:element name="TotalAmount" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="TotalQtyDiscountAmount" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="TotalAfterQtyDiscountAmount" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="Status" nillable="true" type="xsd:string"/>
+                    <xsd:element name="UpdateTime" nillable="true" type="xsd:string"/>
+                    <xsd:element name="Delete_User" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="Delete_Datetime" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="Delete_Reason" nillable="true" type="xsd:string" minOccurs="0"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="HospitalInfo" nillable="true">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="HospitalID" nillable="true" type="xsd:string"/>
+                    <xsd:element name="PurchaseDept" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="PurchaseStaff" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="ReqInvoiceDate" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="Memo" nillable="true" type="xsd:string" minOccurs="0"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="VendorInfo" nillable="true">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="VendorID" nillable="true" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="PORequestItem" nillable="true" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="PORequestDetail" nillable="true">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="POItemNo" nillable="true" type="xsd:string"/>
+                    <xsd:element name="RequireDate" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="Qty" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="UnitPrice" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="Amount" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="QtyDiscountRate" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="QtyDiscountAmount" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="AfterQtyDiscountAmount" nillable="true" type="xsd:string" minOccurs="0"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="MaterialInfo" nillable="true" type="MaterialInfo"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="MATPORequest">
+    <xsd:sequence>
+      <xsd:element name="DoHPORequest" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="MesgInfo" nillable="true" type="messageInformation"/>
+            <xsd:element name="PORequestHead" nillable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="PORequestSummary" nillable="true">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="PONo" nillable="true" type="xsd:string"/>
+                        <xsd:element name="POSort" nillable="true" type="xsd:string"/>
+                        <xsd:element name="PODate" nillable="true" type="xsd:string"/>
+                        <xsd:element name="TotalAmount" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="TotalQtyDiscountAmount" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="TotalAfterQtyDiscountAmount" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="Status" nillable="true" type="xsd:string"/>
+                        <xsd:element name="UpdateTime" nillable="true" type="xsd:string"/>
+                        <xsd:element name="Delete_User" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="Delete_Datetime" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="Delete_Reason" nillable="true" type="xsd:string" minOccurs="0"/>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HospitalInfo" nillable="true">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="HospitalID" nillable="true" type="xsd:string"/>
+                        <xsd:element name="PurchaseDept" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="PurchaseStaff" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="ReqInvoiceDate" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="Memo" nillable="true" type="xsd:string" minOccurs="0"/>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="VendorInfo" nillable="true">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="VendorID" nillable="true" type="xsd:string"/>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="PORequestItem" nillable="true" maxOccurs="unbounded">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="PORequestDetail" nillable="true">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="POItemNo" nillable="true" type="xsd:string"/>
+                        <xsd:element name="RequireDate" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="Qty" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="UnitPrice" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="Amount" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="QtyDiscountRate" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="QtyDiscountAmount" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="AfterQtyDiscountAmount" nillable="true" type="xsd:string" minOccurs="0"/>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="MaterialInfo" nillable="true" type="MaterialInfo"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="messageInformation">
+    <xsd:sequence>
+      <xsd:element name="ProcessID" nillable="true" type="xsd:string"/>
+      <xsd:element name="SenderID" nillable="true" type="xsd:string"/>
+      <xsd:element name="ReceiverID" nillable="true" type="xsd:string"/>
+      <xsd:element name="DocumentType" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MaterialInfo">
+    <xsd:sequence>
+      <xsd:element name="BatchLabel" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="BatchNo" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaterialType" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaterialCode" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaterialBrand" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaterialName" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaterialSpec" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaterialUnit" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaterialPackage" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="ComputerCode" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="InsuranceID" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PERMIT_ID" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PERMIT_KIND" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PERMIT_NUMBER" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PERMIT_DEADLINE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="NATIONALID" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="NATIONALITY" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="FORMULATION_TYPE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="FORMULATION_NAME" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="CLASSID" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="CLASSNAME" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="TRANS_RATE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="ESTIMATE_AMOUNT" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="INGREDIENT" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="TRANS_TYPE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PRIZE_NO" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="BID_START_DATE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="BID_END_DATE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="SHAPE" nillable="true" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

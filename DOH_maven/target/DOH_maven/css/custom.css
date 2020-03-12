@@ -1,0 +1,93 @@
+input {
+	font-family:sans-serif;
+}
+
+.alert {
+	display: none;
+}
+
+.display_inlineblock{
+  display:inline-block;
+}
+
+.Zebra_DatePicker_Icon_Wrapper {
+	width: 100% !important;
+}
+
+.modal-body {
+    max-height: calc(100vh - 212px);
+    overflow-y: auto;
+}
+
+.material-icons.md-24 { 
+	font-size: 24px; 
+	line-height: 50%; 
+	width:100%;
+	height: 100%;
+}
+
+.btn i {
+	font-size: 18px;
+}
+
+.icon-red {
+	color: #FF6383;
+}
+.icon-green {
+    color: #00ce98;    
+}
+.icon-orange {
+	color: #ffb146;
+}
+.icon-orange {
+	color: #ffb146;
+}
+.color_blue {
+  background-color: 	#4682B4 !important;
+}
+
+table a {
+	color: #1da1f2;
+	text-decoration: none;
+}
+
+table a:hover {
+	text-decoration: none;
+}
+
+.table td, .table th  {
+	text-align: center;	
+}
+
+.dataTables_paginate {
+	margin-top: 10px !important;
+}
+
+
+nav > div a.nav-item.nav-link
+{
+	font-size: 14px;
+  	border: none;
+    padding: 12px 18px;
+    color:#555;
+    background:#eee;
+    
+}
+
+nav > div a.nav-item.nav-link.active {	
+	background: #1ab;
+    color:#fff;	
+}
+nav > div a.nav-item.nav-link:hover
+{  	
+    background: #11a0b0;
+    color:#fff;
+    transition:background 0.20s linear;
+}
+
+.tab-content{
+  	background: #fdfdfd;
+    line-height: 25px;
+    border: 1px solid #11a0b0;
+    padding:30px 25px;
+}

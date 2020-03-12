@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="DoHTVNotice">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="MesgInfo" nillable="true" type="messageInformation"/>
+        <xsd:element name="TVInfo" nillable="true" minOccurs="0" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="ReceiptNo" nillable="true" type="xsd:string"/>
+              <xsd:element name="ProcessNo" nillable="true" type="xsd:string"/>
+              <xsd:element name="Status" nillable="true" type="xsd:string"/>
+              <xsd:element name="VoucherNo" nillable="true" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="VoucherType" nillable="true" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="VoucherDate" nillable="true" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="ProcessStaff" nillable="true" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="ProcessTime" nillable="true" type="xsd:string" minOccurs="0"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="TVNotice">
+    <xsd:sequence>
+      <xsd:element name="DoHTVNotice" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="MesgInfo" nillable="true" type="messageInformation"/>
+            <xsd:element name="TVInfo" nillable="true" minOccurs="0" maxOccurs="unbounded">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="ReceiptNo" nillable="true" type="xsd:string"/>
+                  <xsd:element name="ProcessNo" nillable="true" type="xsd:string"/>
+                  <xsd:element name="Status" nillable="true" type="xsd:string"/>
+                  <xsd:element name="VoucherNo" nillable="true" type="xsd:string" minOccurs="0"/>
+                  <xsd:element name="VoucherType" nillable="true" type="xsd:string" minOccurs="0"/>
+                  <xsd:element name="VoucherDate" nillable="true" type="xsd:string" minOccurs="0"/>
+                  <xsd:element name="ProcessStaff" nillable="true" type="xsd:string" minOccurs="0"/>
+                  <xsd:element name="ProcessTime" nillable="true" type="xsd:string" minOccurs="0"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="messageInformation">
+    <xsd:sequence>
+      <xsd:element name="ProcessID" nillable="true" type="xsd:string"/>
+      <xsd:element name="SenderID" nillable="true" type="xsd:string"/>
+      <xsd:element name="ReceiverID" nillable="true" type="xsd:string"/>
+      <xsd:element name="DocumentType" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

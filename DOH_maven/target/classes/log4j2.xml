@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="300">
+	<properties>
+		<!--property name="LOG_HOME">/Users/ecomnb/Desktop/logs</property-->
+		<property name="LOG_HOME">${sys:catalina.home}/logs/DOH</property>
+		<property name="SERVER_FILE_NAME">server</property>
+		<property name="AP_FILE_NAME">ap</property>
+		<property name="ERROR_FILE_NAME">error</property>
+		<Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] %C{1}.%M(%L) [%t] - %msg%n</Property>
+	</properties>
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="${LOG_PATTERN}" />
+		</Console>
+		<RollingRandomAccessFile name="serverFile"
+			fileName="${LOG_HOME}/${SERVER_FILE_NAME}.log"
+			filePattern="${LOG_HOME}/$${date:yyyy-MM}/${SERVER_FILE_NAME}-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout pattern= "${LOG_PATTERN}"	/>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20" />
+		</RollingRandomAccessFile>
+		<RollingRandomAccessFile name="apFile"
+			fileName="${LOG_HOME}/${AP_FILE_NAME}.log"
+			filePattern="${LOG_HOME}/$${date:yyyy-MM}/${AP_FILE_NAME}-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout pattern= "${LOG_PATTERN}"	/>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20" />
+		</RollingRandomAccessFile>
+		<RollingRandomAccessFile name="errorFile"
+			fileName="${LOG_HOME}/${ERROR_FILE_NAME}.log"
+			filePattern="${LOG_HOME}/$${date:yyyy-MM}/${ERROR_FILE_NAME}-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout pattern= "${LOG_PATTERN}"	/>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20" />
+		</RollingRandomAccessFile>
+	</Appenders>
+ 
+	<Loggers>
+		<AsyncLogger name="server" level="trace" additivity="false" includeLocation="true">
+			<AppenderRef ref="serverFile" />
+			<AppenderRef ref="errorFile" level="error" />	
+			<AppenderRef ref="Console"/>  
+		</AsyncLogger>
+		<AsyncLogger name="ap" level="trace" additivity="false" includeLocation="true">
+			<AppenderRef ref="apFile" />
+			<AppenderRef ref="errorFile" level="error" />
+			<AppenderRef ref="Console"/>  	
+		</AsyncLogger>	
+		<AsyncRoot level="error" includeLocation="true">
+			<AppenderRef ref="Console" />
+		</AsyncRoot>
+	</Loggers>
+</Configuration>

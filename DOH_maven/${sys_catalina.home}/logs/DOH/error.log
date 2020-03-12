@@ -1,0 +1,20 @@
+2020-03-04 09:49:14.554 [ERROR] PartnerDeliveryDao.getDeliveryByMethod(65) [main] - javax.crypto.IllegalBlockSizeException: Input length must be multiple of 16 when decrypting with padded cipher
+	at java.base/com.sun.crypto.provider.CipherCore.prepareInputBuffer(CipherCore.java:1005)
+	at java.base/com.sun.crypto.provider.CipherCore.doFinal(CipherCore.java:848)
+	at java.base/com.sun.crypto.provider.AESCipher.engineDoFinal(AESCipher.java:446)
+	at java.base/javax.crypto.Cipher.doFinal(Cipher.java:2202)
+	at internal.server.util.AES.Decrypt(AES.java:44)
+	at internal.db.dao.PartnerDeliveryDao.getDeliveryByMethod(PartnerDeliveryDao.java:60)
+	at internal.xml.util.XmlTestUtil.send(XmlTestUtil.java:146)
+	at internal.xml.util.XmlTestUtil.main(XmlTestUtil.java:15)
+
+2020-03-04 10:06:58.670 [ERROR] PartnerDeliveryDao.getDeliveryByMethod(65) [main] - javax.crypto.IllegalBlockSizeException: Input length must be multiple of 16 when decrypting with padded cipher
+	at java.base/com.sun.crypto.provider.CipherCore.prepareInputBuffer(CipherCore.java:1005)
+	at java.base/com.sun.crypto.provider.CipherCore.doFinal(CipherCore.java:848)
+	at java.base/com.sun.crypto.provider.AESCipher.engineDoFinal(AESCipher.java:446)
+	at java.base/javax.crypto.Cipher.doFinal(Cipher.java:2202)
+	at internal.server.util.AES.Decrypt(AES.java:44)
+	at internal.db.dao.PartnerDeliveryDao.getDeliveryByMethod(PartnerDeliveryDao.java:60)
+	at internal.xml.util.XmlTestUtil.send(XmlTestUtil.java:146)
+	at unit.XmlTest.main(XmlTest.java:146)
+

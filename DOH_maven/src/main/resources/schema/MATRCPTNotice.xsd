@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="DoHReceiptNotice">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="MesgInfo" nillable="true" type="messageInformation"/>
+        <xsd:element name="ReceiptNoticeHead" nillable="true">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="ReceiptNoticeSummary" nillable="true">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="ReceiptNo" nillable="true" type="xsd:string"/>
+                    <xsd:element name="ReceiptSort" nillable="true" type="xsd:string"/>
+                    <xsd:element name="ReceiptDate" nillable="true" type="xsd:string"/>
+                    <xsd:element name="ProcessType" nillable="true" type="xsd:string"/>
+                    <xsd:element name="TotalAmount" nillable="true" type="xsd:string"/>
+                    <xsd:element name="TotalPayableAmount" nillable="true" type="xsd:string"/>
+                    <xsd:element name="InvoiceAmount" nillable="true" type="xsd:string"/>
+                    <xsd:element name="Status" nillable="true" type="xsd:string"/>
+                    <xsd:element name="UpdateTime" nillable="true" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="HospitalInfo" nillable="true">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="HospitalID" nillable="true" type="xsd:string"/>
+                    <xsd:element name="ReceiptDept" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="StoreStuff" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="StoreTime" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="PaymentStaff" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="PaymentTime" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="AccountStaff" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="AccountTime" nillable="true" type="xsd:string" minOccurs="0"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="VendorInfo" nillable="true">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="VendorID" nillable="true" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="ReceiptNoticeItem" nillable="true" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="ReceiptNoticeDetail" nillable="true">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="ReceiptItemNo" nillable="true" type="xsd:string"/>
+                    <xsd:element name="PONo" nillable="true" type="xsd:string"/>
+                    <xsd:element name="POItemNo" nillable="true" type="xsd:string"/>
+                    <xsd:element name="DeliveryDate" nillable="true" type="xsd:string"/>
+                    <xsd:element name="ReceiptQty" nillable="true" type="xsd:string"/>
+                    <xsd:element name="ReceiptUnitPrice" nillable="true" type="xsd:string"/>
+                    <xsd:element name="ReceiptAmount" nillable="true" type="xsd:string"/>
+                    <xsd:element name="DownAmount" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="MinusAmount" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="DiscountRate" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="DiscountAmount" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="QtyDiscountRate" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="QtyDiscountAmount" nillable="true" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="PayableAmount" nillable="true" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="MaterialInfo" nillable="true" type="MaterialInfo"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="AlterReasonInfo" nillable="true" type="rec_receiptAltReasonInformation" maxOccurs="unbounded"/>
+        <xsd:element name="DoHMCCDDeductibleInfo" nillable="true" type="rec_ReceiptCCDDeductibleInfo" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="MATRCPTNotice">
+    <xsd:sequence>
+      <xsd:element name="DoHReceiptNotice" nillable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="MesgInfo" nillable="true" type="messageInformation"/>
+            <xsd:element name="ReceiptNoticeHead" nillable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="ReceiptNoticeSummary" nillable="true">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="ReceiptNo" nillable="true" type="xsd:string"/>
+                        <xsd:element name="ReceiptSort" nillable="true" type="xsd:string"/>
+                        <xsd:element name="ReceiptDate" nillable="true" type="xsd:string"/>
+                        <xsd:element name="ProcessType" nillable="true" type="xsd:string"/>
+                        <xsd:element name="TotalAmount" nillable="true" type="xsd:string"/>
+                        <xsd:element name="TotalPayableAmount" nillable="true" type="xsd:string"/>
+                        <xsd:element name="InvoiceAmount" nillable="true" type="xsd:string"/>
+                        <xsd:element name="Status" nillable="true" type="xsd:string"/>
+                        <xsd:element name="UpdateTime" nillable="true" type="xsd:string"/>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HospitalInfo" nillable="true">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="HospitalID" nillable="true" type="xsd:string"/>
+                        <xsd:element name="ReceiptDept" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="StoreStuff" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="StoreTime" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="PaymentStaff" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="PaymentTime" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="AccountStaff" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="AccountTime" nillable="true" type="xsd:string" minOccurs="0"/>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="VendorInfo" nillable="true">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="VendorID" nillable="true" type="xsd:string"/>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ReceiptNoticeItem" nillable="true" maxOccurs="unbounded">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="ReceiptNoticeDetail" nillable="true">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="ReceiptItemNo" nillable="true" type="xsd:string"/>
+                        <xsd:element name="PONo" nillable="true" type="xsd:string"/>
+                        <xsd:element name="POItemNo" nillable="true" type="xsd:string"/>
+                        <xsd:element name="DeliveryDate" nillable="true" type="xsd:string"/>
+                        <xsd:element name="ReceiptQty" nillable="true" type="xsd:string"/>
+                        <xsd:element name="ReceiptUnitPrice" nillable="true" type="xsd:string"/>
+                        <xsd:element name="ReceiptAmount" nillable="true" type="xsd:string"/>
+                        <xsd:element name="DownAmount" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="MinusAmount" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="DiscountRate" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="DiscountAmount" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="QtyDiscountRate" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="QtyDiscountAmount" nillable="true" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="PayableAmount" nillable="true" type="xsd:string"/>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="MaterialInfo" nillable="true" type="MaterialInfo"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="AlterReasonInfo" nillable="true" type="rec_receiptAltReasonInformation" maxOccurs="unbounded"/>
+            <xsd:element name="DoHMCCDDeductibleInfo" nillable="true" type="rec_ReceiptCCDDeductibleInfo" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="messageInformation">
+    <xsd:sequence>
+      <xsd:element name="ProcessID" nillable="true" type="xsd:string"/>
+      <xsd:element name="SenderID" nillable="true" type="xsd:string"/>
+      <xsd:element name="ReceiverID" nillable="true" type="xsd:string"/>
+      <xsd:element name="DocumentType" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MaterialInfo">
+    <xsd:sequence>
+      <xsd:element name="BatchLabel" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="BatchNo" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaterialType" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaterialCode" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaterialBrand" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaterialName" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaterialSpec" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaterialUnit" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="MaterialPackage" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="ComputerCode" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="InsuranceID" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PERMIT_ID" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PERMIT_KIND" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PERMIT_NUMBER" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PERMIT_DEADLINE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="NATIONALID" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="NATIONALITY" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="FORMULATION_TYPE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="FORMULATION_NAME" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="CLASSID" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="CLASSNAME" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="TRANS_RATE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="ESTIMATE_AMOUNT" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="INGREDIENT" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="TRANS_TYPE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="PRIZE_NO" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="BID_START_DATE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="BID_END_DATE" nillable="true" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="SHAPE" nillable="true" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="rec_receiptAltReasonInformation">
+    <xsd:sequence>
+      <xsd:element name="RCPTMEMO" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="rec_ReceiptCCDDeductibleInfo">
+    <xsd:sequence>
+      <xsd:element name="RECEIPTNO" nillable="true" type="xsd:string"/>
+      <xsd:element name="Recovered_RECEIPTNO" nillable="true" type="xsd:string"/>
+      <xsd:element name="Recovered_version" nillable="true" type="xsd:string"/>
+      <xsd:element name="HOSPRGNO" nillable="true" type="xsd:string"/>
+      <xsd:element name="SORT" nillable="true" type="xsd:string"/>
+      <xsd:element name="RCASH_ID" nillable="true" type="xsd:string"/>
+      <xsd:element name="DEDUCTIBLE_AMOUNT" nillable="true" type="xsd:string"/>
+      <xsd:element name="RECOVERED_AMOUNT" nillable="true" type="xsd:string"/>
+      <xsd:element name="MEMO" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DoHReceiptReply xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MATRCPTReply.xsd">
+  <MesgInfo>
+    <ProcessID>ProcessID</ProcessID>
+    <SenderID>SenderID</SenderID>
+    <ReceiverID>ReceiverID</ReceiverID>
+    <DocumentType>DocumentType</DocumentType>
+  </MesgInfo>
+  <ReceiptReplyHead>
+    <ReceiptReplySummary/>
+    <HospitalInfo>
+      <HospitalID>HospitalID</HospitalID>
+    </HospitalInfo>
+    <VendorInfo>
+      <VendorID>VendorID</VendorID>
+      <ReplyTime>ReplyTime</ReplyTime>
+    </VendorInfo>
+  </ReceiptReplyHead>
+  <UnitPriceInfo>
+    <UNRECEIPTNO>UNRECEIPTNO</UNRECEIPTNO>
+    <RECEIPTNO>RECEIPTNO</RECEIPTNO>
+    <HOSPID>HOSPID</HOSPID>
+    <HOSPRGNO>HOSPRGNO</HOSPRGNO>
+    <PROCESSID>PROCESSID</PROCESSID>
+    <CONFIRMBY>CONFIRMBY</CONFIRMBY>
+    <CONFIRMTIME>CONFIRMTIME</CONFIRMTIME>
+    <MEMO>MEMO</MEMO>
+    <FLAG>FLAG</FLAG>
+  </UnitPriceInfo>
+  <MCCDRecoveredInfo>
+    <REFNO>REFNO</REFNO>
+    <VERSION>VERSION</VERSION>
+    <HOSPRGNO>HOSPRGNO</HOSPRGNO>
+    <ALLIANCEID>ALLIANCEID</ALLIANCEID>
+    <RECEIPTNO>RECEIPTNO</RECEIPTNO>
+    <NEW_PRICE>NEW_PRICE</NEW_PRICE>
+    <RECOVERED_AMOUNT>RECOVERED_AMOUNT</RECOVERED_AMOUNT>
+    <STATUS>STATUS</STATUS>
+    <FLAG>FLAG</FLAG>
+  </MCCDRecoveredInfo>
+</DoHReceiptReply>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DoHPORequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MATPORequest.xsd">
+  <MesgInfo>
+    <ProcessID>ProcessID</ProcessID>
+    <SenderID>SenderID</SenderID>
+    <ReceiverID>ReceiverID</ReceiverID>
+    <DocumentType>DocumentType</DocumentType>
+  </MesgInfo>
+  <PORequestHead>
+    <PORequestSummary>
+      <PONo>PONo</PONo>
+      <POSort>POSort</POSort>
+      <PODate>PODate</PODate>
+      <Status>Status</Status>
+      <UpdateTime>UpdateTime</UpdateTime>
+    </PORequestSummary>
+    <HospitalInfo>
+      <HospitalID>HospitalID</HospitalID>
+    </HospitalInfo>
+    <VendorInfo>
+      <VendorID>VendorID</VendorID>
+    </VendorInfo>
+  </PORequestHead>
+  <PORequestItem>
+    <PORequestDetail>
+      <POItemNo>POItemNo</POItemNo>
+    </PORequestDetail>
+    <MaterialInfo/>
+  </PORequestItem>
+</DoHPORequest>
